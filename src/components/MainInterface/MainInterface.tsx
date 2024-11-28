@@ -1,4 +1,5 @@
-import './index.css'
+
+import '../../index.css'
 import { useState } from 'react'
 import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa'
 
