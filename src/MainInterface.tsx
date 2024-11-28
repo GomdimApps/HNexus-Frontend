@@ -1,12 +1,13 @@
 import './index.css'
 import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa'
 
 function MainInterface() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div className="flex min-h-screen">
+    <div className={`flex min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <div className={`fixed inset-y-0 left-0 transform ${isNavOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out bg-gray-800 text-white w-64 p-4`}>
         <ul className="space-y-2">
           <li className="p-2 hover:bg-gray-700 cursor-pointer rounded">Option 1</li>
@@ -22,7 +23,12 @@ function MainInterface() {
           >
             {isNavOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
-          {/* Add other toolbar items here */}
+          <button 
+            className="p-2 rounded"
+            onClick={() => setIsDarkMode(!isDarkMode)}
+          >
+            {isDarkMode ? <FaSun size={24} /> : <FaMoon size={24} />}
+          </button>
         </div>
         <div className="p-4">
           <h1 className="text-2xl font-bold">Welcome to the main interface</h1>
