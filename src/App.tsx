@@ -6,9 +6,9 @@ function App() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md transition-all duration-500 ease-in-out transform">
         {isLogin ? (
-          <div className="space-y-4">
+          <div className="space-y-4 animate-fadeIn">
             <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
             <input className="w-full p-3 border border-gray-300 rounded-lg" type="text" placeholder="Username" />
             <input className="w-full p-3 border border-gray-300 rounded-lg" type="password" placeholder="Password" />
@@ -18,7 +18,7 @@ function App() {
             </p>
           </div>
         ) : (
-          <div className="space-y-4">
+          <div className="space-y-4 animate-fadeIn">
             <h2 className="text-2xl font-bold text-center text-gray-700">Create Account</h2>
             <input className="w-full p-3 border border-gray-300 rounded-lg" type="text" placeholder="Username" />
             <input className="w-full p-3 border border-gray-300 rounded-lg" type="password" placeholder="Password" />
